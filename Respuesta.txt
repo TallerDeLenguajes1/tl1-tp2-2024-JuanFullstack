@@ -1,0 +1,5 @@
+
+Respondiendo a tus preguntas:
+No podrás ver el archivo tp2_1_2.c en el branch main porque solo está en el branch Opcion_2.
+Para ver una representación gráfica del historial de versiones del repositorio, ejecuta el comando gitk --all.
+Para agregar un nuevo archivo llamado Respuestas.txt en el branch main y hacer un commit para agregarlo al repositorio:
