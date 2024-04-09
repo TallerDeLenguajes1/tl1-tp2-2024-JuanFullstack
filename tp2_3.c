@@ -1,20 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define N 5
 #define M 7
 
 int main() {
-    int i, j;
     int mt[N][M];
-    
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < M; j++) {
-            mt[i][j] = 1 + rand() % 100;
-            printf("%lf ", (double)mt[i][j]);
-        }
-        printf("\n");
+    srand(time(NULL));
+
+    int *ptr = &mt[0][0]; // es lo mismo si mt  directamente ???
+
+    for (int i = 0; i < N * M; i++) {
+        *(ptr + i) = 1 + rand() % 100; // Asignación de valores aleatorios utilizando aritmética de punteros
     }
-    
+
+    // Impresión de la matriz utilizando aritmética de punteros
+    for (int i = 0; i < N * M; i++) {
+        printf("%lf ", (double)*(ptr + i));
+        if ((i + 1) % M == 0) {
+            printf("\n");
+        }
+    }
+
     return 0;
 }
