@@ -9,7 +9,7 @@ int main() {
     int mt[N][M];
     srand(time(NULL));
 
-    int *ptr = &mt[0][0]; // es lo mismo si mt  directamente ???
+    int *ptr = mt[0]; 
 
     for (int i = 0; i < N * M; i++) {
         *(ptr + i) = 1 + rand() % 100; // Asignación de valores aleatorios utilizando aritmética de punteros
@@ -21,6 +21,7 @@ int main() {
         if ((i + 1) % M == 0) {
             printf("\n");
         }
+
     }
 
     return 0;
